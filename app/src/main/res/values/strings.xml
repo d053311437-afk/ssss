@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">FontMaster</string><string name="subtitle">מנהל הגופנים שלך</string><string name="preview_title">תצוגה מקדימה</string>
+<string name="preview_text">שלום! כך ייראה הכתב שלך\nFontMaster 123</string><string name="current_font">הגופן שנבחר</string>
+<string name="default_font">גופן ברירת המחדל</string><string name="import_font">ייבוא גופן TTF / OTF</string>
+<string name="default_button">חזרה לגופן הרגיל</string><string name="font_size">גודל התצוגה</string>
+<string name="font_loaded">הגופן נטען בהצלחה</string><string name="font_error">לא ניתן לטעון את קובץ הגופן</string>
+<string name="default_restored">גופן ברירת המחדל הוחזר</string>
+<string name="system_notice">Android 13 מגביל אפליקציות רגילות משינוי ישיר של גופן המערכת. תמיכה בהחלה מערכתית תלויה ביצרן המכשיר.</string>
+</resources>
