@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/background">
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp" android:layoutDirection="rtl">
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/app_name" android:textSize="32sp" android:textStyle="bold" android:textColor="@color/text_primary" android:gravity="center"/>
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/subtitle" android:textSize="16sp" android:textColor="@color/text_secondary" android:gravity="center" android:layout_marginBottom="24dp"/>
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp" android:background="@drawable/panel_background">
+   <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/preview_title" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/text_primary"/>
+   <TextView android:id="@+id/previewText" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/preview_text" android:textSize="24sp" android:textColor="@color/text_primary" android:gravity="center" android:paddingTop="30dp" android:paddingBottom="30dp"/>
+  </LinearLayout>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/current_font" android:textStyle="bold" android:textSize="17sp" android:textColor="@color/text_primary" android:layout_marginTop="24dp"/>
+  <TextView android:id="@+id/selectedFont" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/default_font" android:textSize="16sp" android:textColor="@color/accent" android:paddingBottom="16dp"/>
+  <Button android:id="@+id/btnImportFont" android:layout_width="match_parent" android:layout_height="56dp" android:text="@string/import_font"/>
+  <Button android:id="@+id/btnDefaultFont" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="10dp" android:text="@string/default_button"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/font_size" android:textStyle="bold" android:textSize="17sp" android:textColor="@color/text_primary" android:layout_marginTop="28dp"/>
+  <TextView android:id="@+id/fontSizeValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="24 sp" android:textColor="@color/accent"/>
+  <SeekBar android:id="@+id/fontSizeSeek" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/system_notice" android:textColor="@color/text_secondary" android:textSize="14sp" android:layout_marginTop="30dp" android:padding="16dp" android:background="@drawable/panel_background"/>
+ </LinearLayout>
+</ScrollView>
