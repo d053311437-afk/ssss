@@ -29,7 +29,12 @@ class MainActivity : AppCompatActivity() {
         "כותרת חזקה" to Typeface.create("sans-serif-black", Typeface.NORMAL),
         "דק ונקי" to Typeface.create("sans-serif-light", Typeface.NORMAL),
         "בינוני" to Typeface.create("sans-serif-medium", Typeface.NORMAL),
-        "מעוגל" to Typeface.create("sans-serif-rounded", Typeface.NORMAL)
+        "מעוגל" to Typeface.create("sans-serif-rounded", Typeface.NORMAL),
+        "דק במיוחד" to Typeface.create("sans-serif-thin", Typeface.NORMAL),
+        "דחוס" to Typeface.create("sans-serif-condensed", Typeface.NORMAL),
+        "דחוס קל" to Typeface.create("sans-serif-condensed-light", Typeface.NORMAL),
+        "דחוס בינוני" to Typeface.create("sans-serif-condensed-medium", Typeface.NORMAL),
+        "כותרת קטנה" to Typeface.create("sans-serif-smallcaps", Typeface.NORMAL)
     )}
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun buildFonts(){
         b.preview.textSize=prefs.getInt("size",26).toFloat()
-        b.previewInput.setText("שלום! כך נראה הכתב שלי")
+        b.previewInput.setText("שלום! FontMaster 2026")
         b.previewInput.setOnKeyListener{_,_,_->b.preview.text=b.previewInput.text;false}
         fonts.forEachIndexed{index,item->
             val v=TextView(this).apply{
@@ -70,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     private fun selectFont(i:Int){b.preview.typeface=fonts[i].second;b.selectedFont.text="נבחר: "+fonts[i].first;prefs.edit().putInt("font",i).apply()}
 
     private fun buildWalls(){
-        val names=listOf("לילה כחול","זריחה","ים רגוע","ניאון","יער","סגול עמוק","מנטה","שקיעה","אפור מודרני","שמיים","חול","טורקיז")
+        val names=listOf("רומא","לונדון","אגם אלפיני","ים רגוע","יער","שקיעה","עיר בלילה","הרים","מפל","שמיים","מדבר","ניאון","אביב","שלג","אוקיינוס","עמק","זריחה","כחול עמוק","סגול","מנטה","זהב","אפור מודרני","טורקיז","אדום")
         names.forEachIndexed{i,n->
             val v=TextView(this).apply{
                 text=n;gravity=Gravity.CENTER;textSize=18f;setTextColor(Color.WHITE);setPadding(12,52,12,52)
