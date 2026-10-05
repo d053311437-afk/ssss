@@ -1,7 +1,13 @@
 package com.fontmaster.app
 
 import android.graphics.Typeface
-import android.net.Uri
+import android.app.WallpaperManager
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.provider.Settings
 import android.os.Bundle
 import android.provider.OpenableColumns
 import android.widget.SeekBar
@@ -14,15 +20,13 @@ import java.io.FileOutputStream
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val fontPicker = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri -> uri?.let { loadFont(it) } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnImportFont.setOnClickListener {
-            fontPicker.launch(arrayOf("font/ttf","font/otf","application/x-font-ttf","application/x-font-opentype","application/octet-stream"))
-        }
+        binding.btnImportFont.text = "ספריית גופנים מובנית"
+        binding.btnImportFont.setOnClickListener { Toast.makeText(this, "בגרסה 2 הספרייה מובנית — ללא ייבוא", Toast.LENGTH_SHORT).show() }
         binding.btnDefaultFont.setOnClickListener {
             binding.previewText.typeface = Typeface.DEFAULT
             binding.selectedFont.text = getString(R.string.default_font)
@@ -41,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun loadFont(uri: Uri) {
+    private fun legacyLoadFont(uri: android.net.Uri) {
         try {
             val name = getFileName(uri)
             val ext = if (name.endsWith(".otf", true)) ".otf" else ".ttf"
@@ -57,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getFileName(uri: Uri): String {
+    private fun getFileName(uri: android.net.Uri): String {
         var result = "Custom Font"
         contentResolver.query(uri, null, null, null, null)?.use { cursor ->
             val i = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
