@@ -5,18 +5,9 @@ plugins {
 android {
     namespace = "com.fontmaster.app"
     compileSdk = 35
-    defaultConfig {
-        applicationId = "com.fontmaster.app"
-        minSdk = 26
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
-    }
+    defaultConfig { applicationId = "com.fontmaster.app"; minSdk = 26; targetSdk = 33; versionCode = 3; versionName = "3.0" }
     buildFeatures { viewBinding = true }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+    compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
 }
 dependencies {
